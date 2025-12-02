@@ -1,9 +1,0 @@
-body {
-    font-family: Verdana, sans-serif;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    color: #fff200;
-    background: linear-gradient(to right,#9d00f3, #ca00b6);
-}

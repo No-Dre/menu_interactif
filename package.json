@@ -4,14 +4,16 @@
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "emailjs-com": "^3.2.0",
-    "express": "^4.21.0",
+    "express": "^4.21.2",
     "mariadb": "^3.3.2",
     "mongoose": "^7.3.1",
     "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.15.3",
     "node": "^20.3.1",
-    "nodemailer": "^6.9.16",
+    "nodemailer": "^7.0.11",
     "path": "^0.12.7",
-    "tailwind": "^4.0.0"
+    "prompt-sync": "^4.2.0",
+    "tailwind": "^2.3.1"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1"

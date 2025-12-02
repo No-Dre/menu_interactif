@@ -1163,7 +1163,7 @@ button[disabled] {
 }
 
 #menu-nav {
-  width: 300px;
+  width: 15.625vw;
 }
 
 @media screen and (max-height: 900px) {

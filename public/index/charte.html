@@ -1,165 +1,259 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="../scripts/charte.js"></script>
-</head>
-<body>
-  <button id="backButton" onclick="retourArriere()">Retour</button>
+  </head>
+  <body>
+    <button id="backButton" onclick="retourArriere()">Retour</button>
     <div id="header" class="pl-[370px] pr-[20px] text-center font-black">
-        <span id="accept-count"></span>
+      <span id="accept-count"></span>
     </div>
     <div id="container" class="pl-[370px] pr-[20px]">
-        <div style="position: absolute; top: 0; left: 300px; right: 0; bottom: 0; background-color: #1C1C29; z-index: 0;"></div>    
-            <div class="flex items-center justify-center h-[80vh]" > <!-- Pages de la charte et logo 'check' -->
-            <div class="h-full pr-4 z-20">
-                <img id="image" src="../Images/Page1Charte.png" alt="Charte1" class="h-full">
-            </div>
-            <div class="h-full pl-4 z-20">
-                <img id="image" src="../Images/page2Charte.png" alt="Charte2" class="h-full">
-            </div>
-            </div>
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          left: 300px;
+          right: 0;
+          bottom: 0;
+          background-color: #1c1c29;
+          z-index: 0;
+        "
+      ></div>
+      <div class="flex items-center justify-center h-[80vh]">
+        <!-- Pages de la charte et logo 'check' -->
+        <div class="h-full pr-4 z-20">
+          <img
+            id="image"
+            src="../Images/Page1Charte.png"
+            alt="Charte1"
+            class="h-full"
+          />
+        </div>
+        <div class="h-full pl-4 z-20">
+          <img
+            id="image"
+            src="../Images/page2Charte.png"
+            alt="Charte2"
+            class="h-full"
+          />
+        </div>
+      </div>
 
-        <input id="terms" type="checkbox" class="peer invisible opacity-0" />
-        <label for="terms" id="button-term" class="font-lg bg-purple rounded text-white font-bold text-center cursor-pointer hover:brightness-90 transition-all flex items-center justify-center absolute" style="left: 40vw;width: 35vw;height: 8vh">
-            <svg class="loader-button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto;display: none;" width="30px" height="30px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
-                <circle cx="50" cy="50" fill="none" stroke="#ffffff" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138">
-                    <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"></animateTransform>
-                </circle>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="check-unchecked mr-2" style="display: block;margin-right: 15px" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;margin-right: 15px;stroke: #FF0000;" class="icon icon-tabler icon-tabler-square-rounded-x" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M10 10l4 4m0 -4l-4 4" />
-                <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
-            </svg>
+      <input id="terms" type="checkbox" class="peer invisible opacity-0" />
+      <label
+        for="terms"
+        id="button-term"
+        class="font-lg bg-purple rounded text-white font-bold text-center cursor-pointer hover:brightness-90 transition-all flex items-center justify-center absolute"
+        style="left: 40vw; width: 35vw; height: 8vh"
+      >
+        <svg
+          class="loader-button"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          style="margin: auto; display: none"
+          width="30px"
+          height="30px"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="10"
+            r="35"
+            stroke-dasharray="164.93361431346415 56.97787143782138"
+          >
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              repeatCount="indefinite"
+              dur="1s"
+              values="0 50 50;360 50 50"
+              keyTimes="0;1"
+            ></animateTransform>
+          </circle>
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="check-unchecked mr-2"
+          style="display: block; margin-right: 15px"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="#ffffff"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          style="display: none; margin-right: 15px; stroke: #ff0000"
+          class="icon icon-tabler icon-tabler-square-rounded-x"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="#ffffff"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M10 10l4 4m0 -4l-4 4" />
+          <path
+            d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z"
+          />
+        </svg>
 
-            <svg xmlns="http://www.w3.org/2000/svg" class="check-checked mr-2" style="display: none;margin-right: 15px;fill: #2bc623;" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M18.333 2c1.96 0 3.56 1.537 3.662 3.472l.005 .195v12.666c0 1.96 -1.537 3.56 -3.472 3.662l-.195 .005h-12.666a3.667 3.667 0 0 1 -3.662 -3.472l-.005 -.195v-12.666c0 -1.96 1.537 -3.56 3.472 -3.662l.195 -.005h12.666zm-2.626 7.293a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z" stroke-width="0" fill="currentColor" style="fill: #2bc623;" />
-            </svg>
-            <span class="text-button">J'accepte la charte</span>
-        </label>
-        <div id="refused-terms" style="background: red;display: none;" class="p-6 font-lg bg-red rounded text-white font-bold w-full text-center mt-4 mb-4 cursor-pointer hover:brightness-90 transition-all flex items-center justify-center">Annuler et refuser la charte ?</div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="check-checked mr-2"
+          style="display: none; margin-right: 15px; fill: #2bc623"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="#ffffff"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M18.333 2c1.96 0 3.56 1.537 3.662 3.472l.005 .195v12.666c0 1.96 -1.537 3.56 -3.472 3.662l-.195 .005h-12.666a3.667 3.667 0 0 1 -3.662 -3.472l-.005 -.195v-12.666c0 -1.96 1.537 -3.56 3.472 -3.662l.195 -.005h12.666zm-2.626 7.293a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"
+            stroke-width="0"
+            fill="currentColor"
+            style="fill: #2bc623"
+          />
+        </svg>
+        <span class="text-button">J'accepte la charte</span>
+      </label>
+      <div
+        id="refused-terms"
+        style="background: red; display: none"
+        class="p-6 font-lg bg-red rounded text-white font-bold w-full text-center mt-4 mb-4 cursor-pointer hover:brightness-90 transition-all flex items-center justify-center"
+      >
+        Annuler et refuser la charte ?
+      </div>
     </div>
 
+    <nav
+      id="menu-nav"
+      class="max-w-[350px] h-screen border-r border-black/10 fixed left-0 top-0 bg-white/80 backdrop-blur z-10"
+      id="Menu"
+    >
+      <ul id="Evenements" class="text-left">
+        <li class="mb-10">
+          <!-- R2 logo -->
+          <a href="/">
+            <div
+              class="logo-menu w-full bg-transparent flex items-center justify-center relative"
+              style="height: 9.346vh"
+            >
+              <div class="absolute top-0 left-0 w-full h-2 gradient"></div>
+              <!-- Thème de l'ui -->
+              <img
+                style="display: flex; padding-top: 5.192vh"
+                src="../Images/logo.svg"
+                alt="logo Rennes2"
+              />
+            </div>
+          </a>
+        </li>
+        <li class="group border-y border-black/10" id="searchresource">
+          <!-- Bouton "je cherche une resource" -->
+          <a href="/resource">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">
+                Je cherche une resource
+              </div>
+            </button>
+          </a>
+        </li>
+        <li class="group border-b border-black/10" id="event">
+          <!-- Bouton "Évènements" -->
+          <a href="/events">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">Évènements</div>
+            </button>
+          </a>
+        </li>
+        <li class="group border-b border-black/10" id="charter">
+          <!-- Bouton "Charte des tiers-lieux" -->
+          <button
+            class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+          >
+            <div class="absolute top-0 left-0 w-2 h-full gradient-v"></div>
+            <!-- Barre de séléction -->
+            <div class="leading-4 mb-2 font-bold text-left">
+              Charte des tiers-lieux
+            </div>
+          </button>
+        </li>
+        <li class="group border-b border-black/10" id="submitresource">
+          <!-- Bouton "je dépose une resource" -->
+          <a href="/depot">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">
+                Je dépose une resource
+              </div>
+            </button>
+          </a>
+        </li>
+        <li class="group border-y border-black/10" id="connection">
+          <!-- Bouton "Se connecter" -->
+          <a href="/login">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">Se connecter</div>
+            </button>
+          </a>
+        </li>
+        <li class="group border-y border-black/10" id="disconnection">
+          <!-- Bouton "Se déconnecter" -->
+          <a href="/disconnect">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">
+                Se déconnecter
+              </div>
+            </button>
+          </a>
+        </li>
+        <li class="absolute bottom-4 left-4" id="Charte">
+          <!-- Logo WorkAdventure -->
+          <a
+            href="https://workadventu.re/"
+            target="_blank"
+            class="transition-all block"
+          >
+            <img src="../Images/WA.svg" alt="Logo Workadventu.re" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <script src="../scripts/displayMenuNav.js"></script>
 
-  <nav id="menu-nav" class="max-w-[350px] h-screen border-r border-black/10 fixed left-0 top-0 bg-white/80 backdrop-blur z-10" id="Menu">
-    <ul id="Evenements" class="text-left">
-        <li class="mb-10"> <!-- R2 logo -->
-            <a href="/">
-                <div class="logo-menu w-full bg-transparent flex items-center justify-center relative" style="height: 90px;">
-                    <div class="absolute top-0 left-0 w-full h-2 gradient"></div> <!-- Thème de l'ui --> 
-                    <img style="display: flex;padding-top: 50px;" src="../Images/logo.svg" alt="logo Rennes2">
-                </div>
-            </a>
-        </li>
-        <li class="group border-y border-black/10" id="ButtonBox"> <!-- Bouton "je cherche une ressource" -->
-            <a href="/ressource">
-            <button class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full">
-                <div class="leading-4 mb-2 font-bold text-left">
-                    Je cherche une ressource
-                </div>
-            </button>
-            </a>
-        </li>
-        <li class="group border-b border-black/10" id="ButtonBox"> <!-- Bouton "je dépose une ressource" -->
-            <a href="/depot">
-            <button class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full">
-                <div class="leading-4 mb-2 font-bold text-left">
-                    Je dépose une ressource
-                </div>
-            </button>
-            </a>
-        </li>
-        <li class="group border-b border-black/10" id="ButtonBox"> <!-- Bouton "Évènements" -->
-            <a href="/events">
-            <button class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full">
-                <div class="leading-4 mb-2 font-bold text-left">
-                    Évènements
-                </div>
-            </button>
-            </a>
-        </li>
-        <li class="group border-b border-black/10" id="ButtonBox"> <!-- Bouton "Charte des tiers-lieux" -->
-            <a href="/charte">
-            <button class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full">
-                <div class="absolute top-0 left-0 w-2 h-full gradient-v"></div> <!-- Barre de séléction -->  
-                <div class="leading-4 mb-2 font-bold text-left">
-                    Charte des tiers-lieux
-                </div>
-            </button>
-            </a>
-        </li>
-        <li class="absolute bottom-4 left-4" id="Charte"> <!-- Logo WorkAdventure -->
-            <a href="https://workadventu.re/" target="_blank" class="transition-all block">
-                <img src="../Images/WA.svg" alt="Logo Workadventu.re" />
-            </a>
-        </li>
-    </ul>
-  </nav>
-  <script src="../scripts/accueil.js"></script>
-<script> // En attente de la base de donées pour faire fonctionner le script
-
-$("#button-term").on('click', function() {
-    if($("#button-term").hasClass('accepted')) {
-        $("#button-term").removeClass('accepted');
-        $(".text-button").show();
-        $(".check-unchecked").show();
-        $(".check-checked").show();
-        $(".loader-button").hide();
-    } else {
-        $("#button-term").addClass('accepted');
-        $(".text-button").hide();
-        $(".check-unchecked").hide();
-        $(".check-checked").hide();
-        $(".loader-button").show();
-    }
-
-    $.ajax({
-        url: "/utilisateurs/bouton-clique",
-        cache: false
-    })
-    .done(function(html) {
-        if($("#button-term").hasClass('accepted')) {
-            $("#button-term").css("background", "transparent");
-            $(".loader-button").hide();
-            $(".check-unchecked").hide();
-            $(".check-checked").show();
-            $(".text-button").show();
-            $(".text-button").html("Charte acceptée");
-            $(".text-button").css("color", "#2bc623");
-        } else {
-            $("#button-term").css("background", "transparent");
-            $(".icon-tabler-square-rounded-x").show();
-            $(".check-checked").hide();
-            $(".text-button").html("Charte refusée");
-            $(".text-button").css("color", "#FF0000");
-        }
-        $("#button-term").hover(
-            function() {
-                if($("#button-term").hasClass('accepted')) {
-                    $("#button-term .text-button").html("Refuser la charte");
-                    $("#button-term .text-button").css("color", "#FF0000");
-                    $(".icon-tabler-square-rounded-x").show();
-                    $(".check-checked").hide();
-                }
-            }, function() {
-                if($("#button-term").hasClass('accepted')) {
-                    $("#button-term  .text-button").css("color", "#2bc623");
-                    $(".icon-tabler-square-rounded-x").hide();
-                    $(".check-checked").show();
-                }
-            }
-        );
-    });
-});
-</script>
   </body>
 </html>

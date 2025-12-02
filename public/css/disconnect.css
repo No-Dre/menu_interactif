@@ -1,0 +1,13 @@
+input[type="button"] {
+    width: 15vw;
+    font-weight: 36.458vw;
+    background-color: #2BC623;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    justify-self: center;
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: #2BC623
+  }

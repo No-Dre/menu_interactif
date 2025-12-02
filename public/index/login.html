@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/depot.css" />
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div
+      class="h-screen w-screen bg-cover"
+      style="background-image: url('Images/map.jpg')"
+    ></div>
+
+    <div
+      style="
+        display: inline-flex;
+        top: 22.222vh;
+        left: 37.5vw;
+        width: 40vw;
+        height: 50vh;
+      "
+      class="bg-transparent absolute z-30"
+    >
+      <div
+        class="items-center rounded-3xl w-full h-full"
+        style="
+          border-radius: 15px;
+          position: relative;
+          background-color: #f5f6f6;
+        "
+      >
+        <!-- white background  -->
+        <div
+          class="text-center w-[50vw] pt-[10vh] pl-[22vw]"
+          style="font-size: 0.9vw; font-weight: 700"
+        >
+          <!--  the space for all the text  -->
+          <form
+            id="form"
+            style="
+              font-size: 1.4vw;
+              display: inline-block;
+              text-align: left;
+              padding-top: 4.6rem;
+            "
+          >
+            <!-- Form div -->
+            <label class="text-left" for="lname">Nom*</label>
+            <label class="text-left" style="padding-left: 9.2vw" for="fname"
+              >Prénom*</label
+            ><br />
+            <input
+              style="width: 10.5vw"
+              type="text"
+              id="lname"
+              name="lname"
+              placeholder="exemple : Doe"
+            />
+            <!-- First name box -->
+            <input
+              style="margin-left: 53px; width: 10.5vw"
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder="exemple : Joe"
+            /><br />
+            <!-- Last name box -->
+            <br />
+            <span style="line-height: 50px"></span>
+            <label class="text-left" for="email">Email de contact*</label><br />
+            <input
+              style="width: 23.8vw"
+              type="text"
+              id="email"
+              name="email"
+              placeholder="exemple.mail@univ-rennes2.fr"
+            /><br />
+            <!-- Email Box -->
+            <span style="line-height: 50px"></span>
+            <br />
+            <div class="items-center justify-center" style="text-align: center">
+              <!-- Bouton de validation -->
+              <input
+                class="cursor-pointer"
+                type="button"
+                value="Valider"
+                id="button_valid"
+              />
+            </div>
+          </form>
+          <div id="failed" style="display: none; color: red">
+            <img
+              alt="utilisateurs incorrect ou vous n'avais pas la permission"
+              style="margin-top: 35px; font-weight: 10px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav
+      id="menu-nav"
+      class="max-w-[350px] h-screen border-r border-black/10 fixed left-0 top-0 bg-white/80 backdrop-blur z-30"
+      id="Menu"
+    >
+      <ul id="Evenements" class="text-left">
+        <li class="mb-10">
+          <!-- R2 logo -->
+          <a href="/">
+            <div
+              class="logo-menu w-full bg-grey-500 flex items-center justify-center relative"
+              style="height: 9.346vh"
+            >
+              <div class="absolute top-0 left-0 w-full h-2 gradient"></div>
+              <!-- Thème de l'ui -->
+              <img
+                style="display: flex; padding-top: 5.192vh"
+                src="../Images/logo.svg"
+                alt="logo Rennes2"
+              />
+            </div>
+          </a>
+        </li>
+        <li class="group border-y border-black/10" id="searchresource">
+          <!-- Bouton "je cherche une resource" -->
+          <a href="/resource">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">
+                Je cherche une resource
+              </div>
+            </button>
+          </a>
+        </li>
+        <li class="group border-b border-black/10" id="event">
+          <!-- Bouton "Évènements" -->
+          <a href="/events">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">Évènements</div>
+            </button>
+          </a>
+        </li>
+        <li class="group border-b border-black/10" id="charter">
+          <!-- Bouton "Charte des tiers-lieux" -->
+          <a href="/charte">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">
+                Charte des tiers-lieux
+              </div>
+            </button>
+          </a>
+        </li>
+        <li class="group border-y border-black/10" id="connection">
+          <!-- Bouton "Se connecter" -->
+          <button
+            class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+          >
+            <div class="absolute top-0 left-0 w-2 h-full gradient-v"></div>
+            <div class="leading-4 mb-2 font-bold text-left">Se connecter</div>
+          </button>
+        </li>
+        <li class="absolute bottom-4 left-4" id="Charte">
+          <!-- Logo WorkAdventure -->
+          <a
+            href="https://workadventu.re/"
+            target="_blank"
+            class="transition-all block"
+          >
+            <img src="../Images/WA.svg" alt="Logo Workadventu.re" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <script src="../scripts/login.js"></script>
+  </body>
+</html>

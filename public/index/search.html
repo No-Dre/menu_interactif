@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div
+      class="h-screen w-screen bg-cover"
+      style="background-image: url('Images/map.jpg')"
+    ></div>
+    <div
+      style="
+        display: inline-flex;
+        top: 22.222vh;
+        left: 37.5vw;
+        width: 40vw;
+        height: 50vh;
+      "
+      class="bg-transparent absolute z-30"
+    >
+      <div
+        class="items-center rounded-3xl w-full h-full"
+        style="
+          border-radius: 15px;
+          position: relative;
+          background-color: #f5f6f6;
+        "
+      >
+        <label
+          class="text"
+          style="
+            margin-left: 15vw;
+            font-weight: bold;
+            padding-top: 5vh;
+            display: table;
+            font-size: larger;
+          "
+          >Nom de la ressource :</label
+        >
+        <input
+          type="search"
+          id="resource name"
+          style="
+            margin-left: 5vw;
+            margin-top: 1rem;
+            border-radius: 15px;
+            width: 30vw;
+            padding-left: 10px;
+          "
+        />
+        <br />
+        <div style="padding-top: 5vh; margin-left: 5vw; width: 30vw;">
+          <button
+            style="
+              background-color: white;
+              padding-left: 0.5vw;
+              margin-top: 1vh;
+              width: 30vw;
+              text-align: left;
+            "
+            id="resource1"
+          ></button>
+          <button
+            style="
+              background-color: white;
+              padding-left: 0.5vw;
+              margin-top: 1vh;
+              width: 30vw;
+              text-align: left;
+            "
+            id="resource2"
+          ></button>
+          <button
+            style="
+              background-color: white;
+              padding-left: 0.5vw;
+              margin-top: 1vh;
+              width: 30vw;
+              text-align: left;
+            "
+            id="resource3"
+          ></button>
+          <button
+            style="
+              background-color: white;
+              padding-left: 0.5vw;
+              margin-top: 1vh;
+              width: 30vw;
+              text-align: left;
+            "
+            id="resource4"
+          ></button>
+          <button
+            style="
+              background-color: white;
+              padding-left: 0.5vw;
+              margin-top: 1vh;
+              width: 30vw;
+              text-align: left;
+            "
+            id="resource5"
+          ></button>
+          <button
+            style="
+              background-color: white;
+              padding-left: 0.5vw;
+              margin-top: 1vh;
+              width: 30vw;
+              text-align: left;
+            "
+            id="resource6"
+          ></button>
+        </div>
+        <div
+          id="pageButton"
+          style="
+            display: inline-flex;
+            padding-top: 5.048vh;
+            padding-left: 16.759vw;
+          "
+        >
+          <div class="items-center justify-center" style="text-align: center">
+            <input
+              class="cursor-pointer"
+              type="button"
+              value=""
+              id="pageLeft"
+              style="color: gray"
+            />
+          </div>
+          <div
+            class="items-center justify-center"
+            style="text-align: center; padding-left: 2.5vw"
+          >
+            <input
+              class="cursor-pointer"
+              type="button"
+              value="1"
+              id="pageCentral"
+              style="
+                background-color: white;
+                width: 1vw;
+                border-radius: 10px;
+                font-weight: bold;
+              "
+            />
+          </div>
+          <div
+            class="items-center justify-center"
+            style="text-align: center; padding-left: 2.5vw"
+          >
+            <input
+              class="cursor-pointer"
+              type="button"
+              value="2"
+              id="pageRight"
+              style="color: gray"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav
+      id="menu-nav"
+      class="max-w-[350px] h-screen border-r border-black/10 fixed left-0 top-0 bg-white/80 backdrop-blur z-30"
+      id="Menu"
+    >
+      <ul id="Evenements" class="text-left">
+        <li class="mb-10">
+          <!-- R2 logo -->
+          <a href="/">
+            <div
+              class="logo-menu w-full bg-grey-500 flex items-center justify-center relative"
+              style="height: 9.346vh"
+            >
+              <div class="absolute top-0 left-0 w-full h-2 gradient"></div>
+              <!-- Thème de l'ui -->
+              <img
+                style="display: flex; padding-top: 5.192vh"
+                src="../Images/logo.svg"
+                alt="logo Rennes2"
+              />
+            </div>
+          </a>
+        </li>
+        <li class="group border-y border-black/10" id="searchresource">
+          <!-- Bouton "je cherche une resource" -->
+          <button
+            class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+          >
+            <div class="absolute top-0 left-0 w-2 h-full gradient-v"></div>
+            <!-- Barre de séléction -->
+            <div class="leading-4 mb-2 font-bold text-left">
+              Je cherche une resource
+            </div>
+          </button>
+        </li>
+        <li class="group border-b border-black/10" id="event">
+          <!-- Bouton "Évènements" -->
+          <a href="/events">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">Évènements</div>
+            </button>
+          </a>
+        </li>
+        <li class="group border-b border-black/10" id="charter">
+          <!-- Bouton "Charte des tiers-lieux" -->
+          <a href="/charte">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">
+                Charte des tiers-lieux
+              </div>
+            </button>
+          </a>
+        </li>
+        <li class="group border-b border-black/10" id="submitresource">
+          <!-- Bouton "je dépose une resource" -->
+          <a href="/depot">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">
+                Je dépose une resource
+              </div>
+            </button>
+          </a>
+        </li>
+        <li class="group border-y border-black/10" id="connection">
+          <!-- Bouton "Se connecter" -->
+          <a href="/login">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">Se connecter</div>
+            </button>
+          </a>
+        </li>
+        <li class="group border-y border-black/10" id="disconnection">
+          <!-- Bouton "Se déconnecter" -->
+          <a href="/disconnect">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">
+                Se déconnecter
+              </div>
+            </button>
+          </a>
+        </li>
+        <li class="absolute bottom-4 left-4" id="Charte">
+          <!-- Logo WorkAdventure -->
+          <a
+            href="https://workadventu.re/"
+            target="_blank"
+            class="transition-all block"
+          >
+            <img src="../Images/WA.svg" alt="Logo Workadventu.re" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <script src="../scripts/displayMenuNav.js"></script>
+    <script src="https://play.workadventu.re/iframe_api.js"></script>
+    <script src="../scripts/search.js"></script>
+  </body>
+</html>

@@ -10,12 +10,12 @@ reste à faire:
     --> page étudiant interne, exterieur - 80%
         ||>affichage (20%)
 
-    --> pages de choix de ressources: -> manque la BDD pour l'affichage (80%)
+    --> pages de choix de resources: -> manque la BDD pour l'affichage (80%)
         ||>tutoriel
         ||>langue
         ||>Jeux
 
 En clair:
-    -> algorithme d'affichage de toutes les ressources
+    -> algorithme d'affichage de toutes les resources
     -> Ajout de la possibilité de drag&drop une affiche (faire en page admin pour la sécurité)
     -> Rédiger le livre d'or des accès

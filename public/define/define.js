@@ -1,0 +1,17 @@
+export const errorMessageAddresource = "Erreur pendant l'ajout de la ressource.";
+export const errorMessageCallDatabase = "Erreur pendant la communication avec la base de donnée.";
+export const errorMessageDataIncomplete = "Certaines informations manquent.";
+export const errorMessageInvalidLanguage = "La langue indiquée n'as pas été reconnue";
+export const errorMessageInvalidResourceName = "Le nom de votre ressource est trop longue.";
+export const errorMessageInvalidRoom = "La salle indiquée n'as pas été reconnue";
+export const errorMessageInvalidUrl = "L'URL' indiqué n'est pas valide";
+export const errorMessageInvalidUrlSize = "L'URL' indiqué est trop longue.";
+export const errorMessageMissingData = "Il manque certaines informations";
+export const errorMessageReplaceResource = "Erreur pendant la modification de la ressource.";
+export const errorMessageResourceAlreadyExist = "Une ressource identique existe déjà.";
+export const messageAddresource = "ressource ajoutée avec succès !";
+export const messageReplaceResource = "ressource modifiée avec succès !";
+export const messageYouHaveAlreadyCreateThisresource = "Vous avez déjà créer cette ressource";
+export const modeAdd = 1;
+export const modeReplace = 2;
+export const lenMaxData = 255;

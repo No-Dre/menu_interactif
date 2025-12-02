@@ -14,7 +14,7 @@ input[type="url"] {
   font-weight: 400;
 }
 
-input[type="submit"] {
+input[type="button"] {
   width: 8vw;
   font-weight: 700;
   background-color: #2BC623;
@@ -36,12 +36,16 @@ select {
 }
 
 .styled-image {
-  padding-top: 30vh;
-  padding-left: 20vw;
+  padding-top: 4.2vh;
+  padding-left: 0vw;
 }
 
 .styled-alt {
   padding-top: 30vh;
   padding-left: 5vw;
   font-size: 60px;
+}
+
+.right {
+  font-size: 60%;
 }

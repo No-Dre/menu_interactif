@@ -1,158 +1,332 @@
 <!DOCTYPE html>
-<html><head>
-<meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
-    <link rel="stylesheet" type="text/css" href="../css/depot.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
-<div class="h-screen w-screen bg-cover absolute z-10" style="background-image: url('Images/map.jpg')"></div> <!-- Fond (map) -->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/depot.css" />
+  </head>
 
-<div style="display: inline-flex; top: 8rem; left: 23rem; width: 70vw; height: 73vh;" class="bg-transparent absolute z-30">
-    <div class="items-center rounded-3xl w-full h-full" style="border-radius: 15px;position: relative; background-color: #F5F6F6;">
-        <div class="text-center w-[50vw] pt-[10vh] pl-[22vw]" style="font-size: 0.90vw; font-weight: 700;">
-            <form id="form" style="font-size: 0.90vw;display: inline-block; text-align: left; padding-top: 2rem;"> <!-- Form div -->
-                <label class="text-left" for="fname">Prénom*</label>
-                <label class="text-left" style="padding-left: 7vw;" for="lname">Nom*</label><br>
-                <input style="width: 10vw;" type="text" id="fname" name="fname" required placeholder="exemple: John"> <!-- First name box -->
-                <input style="margin-left: 5px;width: 10.5vw;" type="text" id="lname" name="lname" required placeholder="exemple: Doe"><br> <!-- Last name box -->
-                <span style="line-height: 45px"></span>
-                <label class="text-left" for="email">Email de contact*</label><br>
-                <input style="width: 21.2vw;" type="text" id="email" name="email" required placeholder="exemple: exemple.mail@univ-rennes2.fr"><br> <!-- Email Box -->
-                <span style="line-height: 45px"></span>
-                <label class="text-left" for="language">Langue de la ressource</label>
-                <label style="position: relative;padding-left: 5vw;" class="text-left" for="level">Niveau</label><br>
-                <input style="width: 10vw;" type="text" id="language" name="language" required placeholder="exemple: Français"> <!-- Language of the resource -->
-                <select style="margin-left: 5vw;width: 6vw;height: 2vw;" id="level" name="level" required> <!-- language level selection -->
-                    <option value="" selected disabled hidden>Choisir</option>
-                    <option value="A1">A1</option>
-                    <option value="A2">A2</option>
-                    <option value="B1">B1</option>
-                    <option value="B2">B2</option>
-                    <option value="C1">C1</option>
-                    <option value="C2">C2</option>
-                </select><br>
-                <span style="line-height: 45px"></span>
-                <label class="text-left" for="languagePoint">Point de langue / Compétence traitée</label><br>
-                <input style="width: 21.2vw;" type="text" id="languagePoint" name="languagePoint" required placeholder="exemple: politesse"><br> <!-- Language_point Box -->
-                <span style="line-height: 45px"></span>
-                <label class="text-left" for="subjectField">Matière / Domaine / Formation</label><br>
-                <input style="width: 21.2vw;" type="text" id="subjectField" name="subjectField" required placeholder="exemple: FLE"><br> <!-- subject Box -->
-                <span style="line-height: 45px"></span>
-                <label class="text-left" for="link">Lien URL de la ressource ou lien de téléchargement*</label><br>
-                <input style="width: 25vw;" type="url" id="link" name="link" required placeholder="exemple: https://lespacedeslangues.univ-rennes2.fr/"><br> <!-- link Box -->
-                <span style="line-height: 45px"></span>
-                <label class="text-left" for="room">Salle de dépôt de la ressource*</label><br>
-                <input style="width: 21.2vw;" type="text" id="room" name="room" required placeholder="exemple: accueil-villejean"><br> <!-- Room Box -->
-                <input type="radio" id="have" name="right" required>
-                <label for="have">J'ai les droits d'édition de la salle et j'ai déjà ajouté la ressource.</label><br>
-                <input type="radio" id="asks" name="right" required>
-                <label for="asks">Je demande les droits d'édition.</label><br>
-                <br>
-                <div class="items-center justify-center" style="text-align: center;"> <!-- Bouton de validation -->
-                    <input class="cursor-pointer" type="submit" value="Valider">
-                </div>
-            </form>
-            <div id="success" style="display: none; color: green;">
-                <img src="../Images/checked.png" alt="Requête envoyée avec succès" class="styled-image" onerror="this.classList.add('styled-alt');this.classList.remove('styled-image')">
+  <body>
+    <div
+      class="h-screen w-screen bg-cover absolute z-10"
+      style="background-image: url('../Images/map.jpg')"
+    ></div>
+    <!-- Fond (map) -->
+
+    <div
+      id="formForresource"
+      style="
+        display: inline-flex;
+        top: 13.292vh;
+        left: 22.8125vw;
+        width: 70vw;
+        height: 73vh;
+        filter: blur(0px);
+      "
+      class="bg-transparent absolute z-30"
+    >
+      <div
+        class="items-center rounded-3xl w-full h-full"
+        style="
+          border-radius: 15px;
+          position: relative;
+          background-color: #f5f6f6;
+        "
+      >
+        <div
+          class="text-center w-[50vw] pt-[10vh] pl-[22vw]"
+          style="font-size: 0.9vw; font-weight: 700"
+        >
+          <form
+            id="form"
+            style="
+              font-size: 1vw;
+              display: inline-block;
+              text-align: left;
+              padding-top: 2rem;
+            "
+          >
+            <!-- Form div -->
+            <label class="text-left" for="language"
+              >Langue de la resource</label
+            >
+            <label
+              style="position: relative; padding-left: 3.5vw"
+              class="text-left"
+              for="level"
+              >Niveau de langue</label
+            ><br />
+            <input
+              style="width: 10vw"
+              type="text"
+              id="language"
+              name="language"
+              required
+              placeholder="exemple: Français"
+            />
+            <!-- Language of the resource -->
+            <select
+              style="margin-left: 5vw; width: 8.74vw; height: 1.72vw"
+              id="level"
+              name="level"
+              required
+            >
+              <!-- language level selection -->
+              <option value="" selected disabled hidden>Choisir</option>
+              <option value="A1">A1</option>
+              <option value="A2">A2</option>
+              <option value="B1">B1</option>
+              <option value="B2">B2</option>
+              <option value="C1">C1</option>
+              <option value="C2">C2</option></select
+            ><br />
+            <br />
+            <label class="text-left" for="resourceName"
+              >Nom de la resource</label
+            ><br />
+            <input
+              style="width: 24vw; margin-top: 0.521vw"
+              type="text"
+              id="resourceName"
+              name="resourceName"
+              required
+              placeholder="exemple: les politiques étrangères"
+            /><br /><br />
+            <!-- name Box -->
+            <label class="text-left" for="subjectField"
+              >Matière / Domaine / Formation</label
+            ><br />
+            <input
+              style="width: 24vw; margin-top: 0.521vw"
+              type="text"
+              id="subjectField"
+              name="subjectField"
+              required
+              placeholder="exemple: FLE"
+            /><br /><br />
+            <!-- subject Box -->
+            <label class="text-left" for="link"
+              >Lien URL de la resource ou de téléchargement</label
+            ><br />
+            <input
+              style="width: 24vw; margin-top: 0.521vw"
+              type="url"
+              id="link"
+              name="link"
+              required
+              placeholder="https://lespacedeslangues.univ-rennes2.fr/"
+            /><br /><br />
+            <!-- link Box -->
+            <label class="text-left" for="room"
+              >Salle de dépôt de la resource</label
+            ><br />
+            <input
+              style="width: 24vw; margin-top: 0.521vw"
+              type="text"
+              id="room"
+              name="room"
+              required
+              placeholder="exemple: accueil-villejean"
+            /><br /><br />
+            <!-- Room Box -->
+            <br />
+            <div class="items-center justify-center" style="text-align: center">
+              <!-- Bouton de validation -->
+              <input
+                class="cursor-pointer"
+                type="button"
+                value="Valider"
+                id="button_valid"
+              />
             </div>
-            <div id="failed" style="display: none; color: red;">
-                <img src="../Images/cross checked.png" alt="Impossible d'envoyer la requête" class="styled-image" onerror="this.classList.add('styled-alt');this.classList.remove('styled-image')">
+            <div
+              id="success"
+              style="display: none; color: green; text-align: center"
+            >
+              <img
+                id="successText"
+                alt="Ajout de la resource effectué"
+                class="styled-image"
+                onerror="this.classList.add('styled-alt');this.classList.remove('styled-image')"
+              />
             </div>
+            <div
+              id="failed"
+              style="display: none; color: red; text-align: center"
+            >
+              <img
+                id="failedText"
+                alt="Impossible d'ajouter la resource"
+                class="styled-image"
+                onerror="this.classList.add('styled-alt');this.classList.remove('styled-image')"
+              />
+            </div>
+          </form>
         </div>
+      </div>
     </div>
-</div>
-
-<nav id="menu-nav" class="max-w-[350px] h-screen border-r border-black/10 fixed left-0 top-0 bg-white/80 backdrop-blur z-30" id="Menu">
-    <ul id="Evenements" class="text-left">
-        <li class="mb-10"> <!-- R2 logo -->
-            <a href="/">
-                <div class="logo-menu w-full bg-grey-500 flex items-center justify-center relative" style="height: 90px;">
-                    <div class="absolute top-0 left-0 w-full h-2 gradient"></div> <!-- Thème de l'ui --> 
-                    <img style="display: flex;padding-top: 50px;" src="../Images/logo.svg" alt="logo Rennes2">
-                </div>
-            </a>
+    <div
+      id="replaceResource"
+      style="
+        display: none;
+        top: 31.542vh;
+        left: 40.3125vw;
+        width: 35vw;
+        height: 36.5vh;
+      "
+      class="bg-transparent absolute z-30"
+    >
+      <div
+        class="items-center rounded-3xl w-full h-full"
+        style="
+          border-radius: 15px;
+          position: relative;
+          background-color: #fcfdfd;
+        "
+      >
+        <div
+          class="text-center w-[50vw] pt-[10vh] pl-[22vw]"
+          style="font-size: 0.9vw; font-weight: 700"
+        >
+          <form
+            id="form"
+            style="
+              font-size: 1vw;
+              display: inline-block;
+              text-align: center;
+              padding-top: 5rem;
+              padding-left: 5rem;
+              padding-right: 5rem;
+            "
+          >
+            <div>
+              Attention, vous allez mettre à jour le lien d'une ancienne
+              resource!
+            </div>
+            <div style="display: inline-flex; padding-top: 7vh;">
+              <div
+                class="items-center justify-center"
+                style="text-align: center"
+              >
+                <!-- Bouton de validation -->
+                <input
+                  class="cursor-pointer"
+                  type="button"
+                  value="Annuler"
+                  id="cancel_button"
+                />
+              </div>
+              <div
+                class="items-center justify-center"
+                style="text-align: center; padding-left: 4vw;"
+              >
+                <!-- Bouton de validation -->
+                <input
+                  class="cursor-pointer"
+                  type="button"
+                  value="Continuer"
+                  id="continue_button"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <nav
+      id="menu-nav"
+      class="max-w-[350px] h-screen border-r border-black/10 fixed left-0 top-0 bg-white/80 backdrop-blur z-30"
+      id="Menu"
+    >
+      <ul id="Evenements" class="text-left">
+        <li class="mb-10">
+          <!-- R2 logo -->
+          <a href="/">
+            <div
+              class="logo-menu w-full bg-grey-500 flex items-center justify-center relative"
+              style="height: 9.346vh"
+            >
+              <div class="absolute top-0 left-0 w-full h-2 gradient"></div>
+              <!-- Thème de l'ui -->
+              <img
+                style="display: flex; padding-top: 5.192vh"
+                src="../Images/logo.svg"
+                alt="logo Rennes2"
+              />
+            </div>
+          </a>
         </li>
-        <li class="group border-y border-black/10" id="ButtonBox"> <!-- Bouton "je cherche une ressource" -->
-            <a href="/ressource">
-            <button class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full">
-                <div class="leading-4 mb-2 font-bold text-left">
-                    Je cherche une ressource
-                </div>
+        <li class="group border-y border-black/10" id="searchresource">
+          <!-- Bouton "je cherche une resource" -->
+          <a href="/resource">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">
+                Je cherche une resource
+              </div>
             </button>
-        </a>
-    </li>
-    <li class="group border-b border-black/10" id="ButtonBox"> <!-- Bouton "je dépose une ressource" -->
-        <a href="/depot">
-            <button class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full">
-                <div class="absolute top-0 left-0 w-2 h-full gradient-v"></div> <!-- Barre de séléction -->  
-                <div class="leading-4 mb-2 font-bold text-left">
-                    Je dépose une ressource
-                </div>
-            </button>
-        </a>
-    </li>
-    <li class="group border-b border-black/10" id="ButtonBox"> <!-- Bouton "Évènements" -->
-        <a href="/events">
-            <button class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full">
-                <div class="leading-4 mb-2 font-bold text-left">
-                    Évènements
-                </div>
-            </button>
-            </a>
+          </a>
         </li>
-        <li class="group border-b border-black/10" id="ButtonBox"> <!-- Bouton "Charte des tiers-lieux" -->
-            <a href="/charte">
-            <button class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full">
-                <div class="leading-4 mb-2 font-bold text-left">
-                    Charte des tiers-lieux
-                </div>
+        <li class="group border-b border-black/10" id="event">
+          <!-- Bouton "Évènements" -->
+          <a href="/events">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">Évènements</div>
             </button>
-            </a>
+          </a>
         </li>
-        <li class="absolute bottom-4 left-4" id="Charte"> <!-- Logo WorkAdventure -->
-            <a href="https://workadventu.re/" target="_blank" class="transition-all block">
-                <img src="../Images/WA.svg" alt="Logo Workadventu.re" />
-            </a>
+        <li class="group border-b border-black/10" id="charter">
+          <!-- Bouton "Charte des tiers-lieux" -->
+          <a href="/charte">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">
+                Charte des tiers-lieux
+              </div>
+            </button>
+          </a>
         </li>
-    </ul>
-</nav>
-<script type="text/javascript">
-    document.getElementById('form').addEventListener('submit', (event) => {
-        event.preventDefault();
-        const formData = {
-            fname: document.getElementById('fname').value,
-            lname: document.getElementById('lname').value,
-            email: document.getElementById('email').value,
-            language: document.getElementById('language').value,
-            level: document.getElementById('level').value,
-            languagePoint: document.getElementById('languagePoint').value,
-            subjectField: document.getElementById('subjectField').value,
-            link: document.getElementById('link').value,
-            room: document.getElementById('room').value,
-            right: document.querySelector('input[name="right"]:checked')?.id,
-        };
-        console.log('Data retrieved:', formData);
-
-        formData.right = formData.right === 'asks' ? 'demande les droits d\'édition de la carte.' : 'possède les droits d\'édition de la carte.'
-        fetch('/send-email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                formData: formData,
-            }),
-        })
-        .then(function(html) {
-            $('#form').hide();
-            $('#success').show();
-        })
-        .catch(function(err) {
-            console.error('Error sending mail:', err);
-            $('#form').hide();
-            $('#failed').show();
-        });
-      });
-</script>
-</body></html>
+        <li class="group border-b border-black/10" id="submitresource">
+          <!-- Bouton "je dépose une resource" -->
+          <button
+            class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+          >
+            <div class="absolute top-0 left-0 w-2 h-full gradient-v"></div>
+            <!-- Barre de séléction -->
+            <div class="leading-4 mb-2 font-bold text-left">
+              Je dépose une resource
+            </div>
+          </button>
+        </li>
+        <li class="group border-y border-black/10" id="disconnection">
+          <!-- Bouton "Se déconnecter" -->
+          <a href="/disconnect">
+            <button
+              class="relative px-4 py-8 hover:bg-black/10 hover:pl-6 transition-all block w-full"
+            >
+              <div class="leading-4 mb-2 font-bold text-left">
+                Se déconnecter
+              </div>
+            </button>
+          </a>
+        </li>
+        <li class="absolute bottom-4 left-4" id="Charte">
+          <!-- Logo WorkAdventure -->
+          <a
+            href="https://workadventu.re/"
+            target="_blank"
+            class="transition-all block"
+          >
+            <img src="../Images/WA.svg" alt="Logo Workadventu.re" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <script type="module" src="../scripts/security.js"></script>
+    <script type="module" src="../scripts/depot.js"></script>
+  </body>
+</html>
